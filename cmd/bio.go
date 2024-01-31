@@ -14,10 +14,10 @@ var BioViewCmd = &cobra.Command{
 	Args: cobra.MinimumNArgs(1),
 
 	Run: func(cmd *cobra.Command, args []string) {
-		bio, err := statuslog.BioGet(args[0])
+		result, err := statuslog.BioGet(args[0])
 		if err != nil {
-			if bio.Request.StatusCode == 404 {
-				fmt.Println(bio.Response.Message)
+			if result.Request.StatusCode == 404 {
+				fmt.Println(result.Response.Message)
 				os.Exit(0)
 			}
 
@@ -25,6 +25,6 @@ var BioViewCmd = &cobra.Command{
 			os.Exit(1)
 		}
 
-		fmt.Println(bio.Response.Bio)
+		fmt.Println(result.Response.Bio)
 	},
 }
