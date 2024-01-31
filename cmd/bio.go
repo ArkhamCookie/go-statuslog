@@ -5,6 +5,7 @@ import (
 	"internal/statuslog"
 	"os"
 
+	"github.com/charmbracelet/glamour"
 	"github.com/spf13/cobra"
 )
 
@@ -25,6 +26,11 @@ var BioViewCmd = &cobra.Command{
 			os.Exit(1)
 		}
 
-		fmt.Println(result.Response.Bio)
+		out, err := glamour.Render(result.Response.Bio, "dark")
+		if err != nil {
+			fmt.Println(err)
+			os.Exit(1)
+		}
+		fmt.Print(out)
 	},
 }
