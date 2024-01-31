@@ -32,7 +32,7 @@ func BioGet(address string) (*StatuslogBioData, error) {
 
 	if result.Request.StatusCode != 200 {
 		errorMsg := fmt.Sprintf("status code: %d", result.Request.StatusCode)
-		return nil, errors.New(errorMsg)
+		return &result, errors.New(errorMsg)
 	}
 
 	return &result, nil
