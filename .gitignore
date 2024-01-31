@@ -1,0 +1,24 @@
+# Arkham's golang .gitignore
+# https://arkhamcookie.com
+
+## secrets
+.env*
+!.env.example
+!test.env
+
+## golang
+*.test
+*.sum
+
+## cache
+.trash
+.DS_Store
+*.bak
+
+## output
+out/
+
+## configs
+.vscode
+.idea
+.vim
