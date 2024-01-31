@@ -8,7 +8,7 @@ import (
 	"net/http"
 )
 
-func List(address string) (*StatuslogListData, error) {
+func ListGet(address string) (*StatuslogListData, error) {
 	if address == "" {
 		return nil, errors.New("no address given")
 	}
@@ -35,4 +35,12 @@ func List(address string) (*StatuslogListData, error) {
 		return nil, errors.New(errorMsg)
 	}
 	return &result, nil
+}
+
+func ListEach(result *StatuslogListData) (string) {
+	var statuses string
+	for _, status := range result.Response.Statuses {
+		statuses += fmt.Sprintf("- %s %s %s\n", status.RelativeTime, status.Emoji, status.Content)
+	}
+	return statuses
 }
