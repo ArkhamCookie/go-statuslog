@@ -8,12 +8,17 @@ import (
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "sl <cmd> [flags]",
-	Short: "Statuslog is a commandline interface for omg.lol's statuslog feature.",
+	Use:   "sl [flags]",
+	Short: "Statuslog is a commandline interface for omg.lol's statuslog feature",
 
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("statuslog")
 	},
+}
+
+func init() {
+	rootCmd.AddCommand(BioViewCmd)
+	rootCmd.AddCommand(ListCmd)
 }
 
 func Execute() {
