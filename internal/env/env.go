@@ -9,7 +9,7 @@ import (
 )
 
 // Get a value for env
-func GetEnvValue(target string, file string) (string, error) {
+func GetEnvValue(target, file string) (string, error) {
 	// Set file to '.env' if no file is given.
 	// Makes file value optional.
 	if file == "" {
