@@ -69,17 +69,3 @@ type StatuslogLatestData struct {
 		} `json:"statuses"`
 	} `json:"response"`
 }
-
-type NewStatusData struct {
-	Request struct {
-		StatusCode int  `json:"status_code"`
-		Success    bool `json:"success"`
-	} `json:"request"`
-	Response struct {
-		Message     string `json:"message"`
-		ID          string `json:"id"`
-		Status      string `json:"status"`
-		URL         string `json:"url"`
-		ExternalURL string `json:"external_url"`
-	} `json:"response"`
-}
