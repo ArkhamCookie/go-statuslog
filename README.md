@@ -8,24 +8,24 @@ A CLI for interacting with [omg.lol](https://omg.lol)'s [Statuslog](https://stat
 sl [command]
 ```
 
-## Commands
+### Commands
 
-### bio
+#### bio
 
 View an address' bio
 
-### completion
+#### completion
 
 Generate the autocompletion script for the the specified shell
 
-### help
+#### help
 
 Help about any command
 
-### list
+#### list
 
 List all of an address' statuses
 
-### view
+#### view
 
 View a status
