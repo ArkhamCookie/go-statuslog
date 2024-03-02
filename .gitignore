@@ -18,6 +18,11 @@
 ## output
 out/
 
+### builds
+
+go-statuslog
+sl
+
 ## configs
 .vscode
 .idea
