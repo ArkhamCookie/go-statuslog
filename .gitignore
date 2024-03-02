@@ -19,7 +19,6 @@
 out/
 
 ### builds
-
 go-statuslog
 sl
 
