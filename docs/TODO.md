@@ -32,3 +32,11 @@
 ### `edit` Command
 
 - [ ] Update an existing status
+
+## Go Tests
+
+- [ ] `bio_test.go`
+- [ ] `list_test.go`
+- [ ] `new_test.go`
+- [ ] `view_test.go`
+- [x] `env_test.go`
