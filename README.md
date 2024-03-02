@@ -1,5 +1,7 @@
 # go-statuslog
 
+[![Go Report Card Badge](https://goreportcard.com/badge/github.com/ArkhamCookie/go-statuslog)](https://goreportcard.com/report/github.com/ArkhamCookie/go-statuslog)
+
 A CLI for interacting with [omg.lol](https://omg.lol)'s [Statuslog](https://status.lol) feature.
 
 ## Usage

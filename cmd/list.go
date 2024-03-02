@@ -10,9 +10,9 @@ import (
 )
 
 var ListCmd = &cobra.Command{
-	Use: "list <address>",
+	Use:   "list <address>",
 	Short: "List all of an address' statuses",
-	Args: cobra.MinimumNArgs(1),
+	Args:  cobra.MinimumNArgs(1),
 
 	Run: func(cmd *cobra.Command, args []string) {
 		address := args[0]

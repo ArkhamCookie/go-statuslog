@@ -10,9 +10,9 @@ import (
 )
 
 var StatusViewCmd = &cobra.Command{
-	Use: "view <address> <status>",
+	Use:   "view <address> <status>",
 	Short: "View a status",
-	Args: cobra.MinimumNArgs(2),
+	Args:  cobra.MinimumNArgs(2),
 
 	Run: func(cmd *cobra.Command, args []string) {
 		result, err := statuslog.StatusGet(args[0], args[1])
