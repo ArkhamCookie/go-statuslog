@@ -28,6 +28,10 @@ Help about any command
 
 List all of an address' statuses
 
+### new
+
+Create a new (one line) status
+
 ### view
 
 View a status
