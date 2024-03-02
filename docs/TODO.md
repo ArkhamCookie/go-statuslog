@@ -1,5 +1,9 @@
 # To-do
 
+## General
+
+- [ ] Find a way to store API key and config securely
+
 ## Commands
 
 - [ ] bio
