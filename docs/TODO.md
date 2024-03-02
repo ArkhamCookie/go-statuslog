@@ -1,6 +1,6 @@
 # To-do
 
-## Base Commands
+## Commands
 
 - [ ] bio
   - [ ] view
