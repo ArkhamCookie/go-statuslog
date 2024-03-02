@@ -10,7 +10,7 @@ import (
 	"net/http"
 )
 
-func NewStatus(status string) (bool, error){
+func NewStatus(status string) (bool, error) {
 	if status == "" {
 		return false, errors.New("no status provided")
 	}

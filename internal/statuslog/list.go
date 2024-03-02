@@ -37,7 +37,7 @@ func ListGet(address string) (*StatuslogListData, error) {
 	return &result, nil
 }
 
-func ListEach(result *StatuslogListData) (string) {
+func ListEach(result *StatuslogListData) string {
 	var statuses string
 	for _, status := range result.Response.Statuses {
 		statuses += fmt.Sprintf("- %s %s %s\n", status.RelativeTime, status.Emoji, status.Content)

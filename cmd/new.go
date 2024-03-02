@@ -8,9 +8,9 @@ import (
 )
 
 var NewStatusCmd = &cobra.Command{
-	Use: "new <staus>",
+	Use:   "new <staus>",
 	Short: "Create a new (one line) status",
-	Args: cobra.ExactArgs(1),
+	Args:  cobra.ExactArgs(1),
 
 	Run: func(cmd *cobra.Command, args []string) {
 		success, err := statuslog.NewStatus(args[0])

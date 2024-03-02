@@ -10,9 +10,9 @@ import (
 )
 
 var BioViewCmd = &cobra.Command{
-	Use: "bio <address>",
+	Use:   "bio <address>",
 	Short: "View an address' bio",
-	Args: cobra.MinimumNArgs(1),
+	Args:  cobra.MinimumNArgs(1),
 
 	Run: func(cmd *cobra.Command, args []string) {
 		result, err := statuslog.BioGet(args[0])
