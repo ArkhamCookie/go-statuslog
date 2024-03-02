@@ -8,3 +8,4 @@
 - [x] view
 - [x] list
 - [x] new
+- [ ] edit
