@@ -17,6 +17,7 @@ var rootCmd = &cobra.Command{
 }
 
 func init() {
+	rootCmd.AddCommand(AuthCmd)
 	rootCmd.AddCommand(BioViewCmd)
 	rootCmd.AddCommand(ListCmd)
 	rootCmd.AddCommand(NewStatusCmd)
