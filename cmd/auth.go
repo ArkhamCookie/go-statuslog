@@ -2,7 +2,6 @@ package cmd
 
 import (
 	"fmt"
-	"internal/token"
 	"os"
 
 	"github.com/spf13/cobra"
@@ -16,7 +15,7 @@ var AuthCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		switch args[0] {
 		case "status":
-			token := token.GetTokenEnv()
+			token := os.Getenv("OMGLOL_TOKEN")
 			if token == "" {
 				fmt.Println("Token not set")
 				os.Exit(1)
@@ -25,19 +24,30 @@ var AuthCmd = &cobra.Command{
 			fmt.Println("Token is set!")
 			os.Exit(0)
 		case "token":
-			fmt.Printf("\"%s\"\n", token.GetTokenEnv())
+			token := os.Getenv("OMGLOL_TOKEN")
+			fmt.Printf("\"%s\"\n", token)
+			
+			os.Exit(0)
+		case "address":
+			token := os.Getenv("OMGLOL_ADDRESS")
+			fmt.Printf("\"%s\"\n", token)
+			
 			os.Exit(0)
 		case "set":
-			argCount := len(args)
-			switch argCount {
-			case 1:
-				fmt.Println("auth set <TOKEN>")
+		
+			if len(args) < 3 {
+				fmt.Println("auth set <address|token> <value>")
 				os.Exit(0)
-			case 2:
-				token.SetTokenEnv(args[1])
+			}
+			switch args[1] {
+			case "token":
+				os.Setenv("OMGLOL_TOKEN", args[2])
+				os.Exit(0)
+			case "address":
+				os.Setenv("OMGLOL_ADDRESS", args[2])
 				os.Exit(0)
 			default:
-				fmt.Println("`auth set` only accepts 2 arguments!")
+				fmt.Println("auth set <address|token> <value>")
 				os.Exit(1)
 			}
 		}
