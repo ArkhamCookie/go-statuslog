@@ -8,8 +8,15 @@ import (
 )
 
 var AuthCmd = &cobra.Command{
-	Use:   "auth <cmd>",
+	Use:   "auth <command>",
 	Short: "Setup or view auth",
+	Long: `Setup or view auth
+	
+COMMANDS:
+	status:   view auth status
+	set:      set address or api token
+	token:    print current api token
+	address:  print current address`,
 	Args:  cobra.MinimumNArgs(1),
 
 	Run: func(cmd *cobra.Command, args []string) {
