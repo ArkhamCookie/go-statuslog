@@ -5,5 +5,4 @@ use (
 	./cmd
 	./internal/env
 	./internal/statuslog
-	./internal/token
 )
