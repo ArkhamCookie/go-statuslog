@@ -4,16 +4,16 @@ import (
 	"fmt"
 	"internal/token"
 	"os"
-	
+
 	"github.com/spf13/cobra"
 )
 
-var AuthCmd = &cobra.Command {
-	Use: "auth <cmd>",
+var AuthCmd = &cobra.Command{
+	Use:   "auth <cmd>",
 	Short: "Setup or view auth",
-	Args: cobra.MinimumNArgs(1),
-	
-	Run: func(cmd *cobra.Command, args [] string) {
+	Args:  cobra.MinimumNArgs(1),
+
+	Run: func(cmd *cobra.Command, args []string) {
 		switch args[0] {
 		case "status":
 			token := token.GetTokenEnv()
@@ -28,14 +28,17 @@ var AuthCmd = &cobra.Command {
 			fmt.Printf("\"%s\"\n", token.GetTokenEnv())
 			os.Exit(0)
 		case "set":
-			// TODO: check that 2 args are given
-			token.SetTokenEnv(args[1])
-			os.Exit(0)
-			
-			/*
-			fmt.Println("auth set <TOKEN>")
-			os.Exit(1)
-			*/
+			argCount := len(args)
+			switch argCount {
+			case 1:
+				fmt.Println("auth set <TOKEN>")
+				os.Exit(0)
+			case 2:
+				token.SetTokenEnv(args[1])
+				os.Exit(0)
+			default:
+				fmt.Println("`auth set` only accepts 2 arguments!")
+				os.Exit(1)
+			}
 		}
 	}}
-
