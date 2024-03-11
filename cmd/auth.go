@@ -31,13 +31,11 @@ COMMANDS:
 			fmt.Println("Token is set!")
 			os.Exit(0)
 		case "token":
-			token := os.Getenv("OMGLOL_TOKEN")
-			fmt.Printf("\"%s\"\n", token)
+			fmt.Println(os.Getenv("OMGLOL_TOKEN"))
 			
 			os.Exit(0)
 		case "address":
-			token := os.Getenv("OMGLOL_ADDRESS")
-			fmt.Printf("\"%s\"\n", token)
+			fmt.Println(os.Getenv("OMGLOL_ADDRESS"))
 			
 			os.Exit(0)
 		case "set":
