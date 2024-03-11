@@ -25,8 +25,17 @@ var AuthCmd = &cobra.Command {
 			fmt.Println("Token is set!")
 			os.Exit(0)
 		case "token":
-			fmt.Println("TOKEN:", token.GetTokenEnv())
+			fmt.Printf("\"%s\"\n", token.GetTokenEnv())
 			os.Exit(0)
+		case "set":
+			// TODO: check that 2 args are given
+			token.SetTokenEnv(args[1])
+			os.Exit(0)
+			
+			/*
+			fmt.Println("auth set <TOKEN>")
+			os.Exit(1)
+			*/
 		}
 	}}
 
