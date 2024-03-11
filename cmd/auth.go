@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"fmt"
+	"internal/env"
 	"os"
 
 	"github.com/spf13/cobra"
@@ -15,6 +16,7 @@ var AuthCmd = &cobra.Command{
 COMMANDS:
 	status:   view auth status
 	set:      set address or api token
+	env:      use a file for var's values (defaults to .env)
 	token:    print current api token
 	address:  print current address`,
 	Args:  cobra.MinimumNArgs(1),
@@ -56,6 +58,20 @@ COMMANDS:
 			default:
 				fmt.Println("auth set <address|token> <value>")
 				os.Exit(1)
+		case "env":
+				if len(args) == 2 {
+					apiKey, err := env.GetEnvValue(args[1], "OMGLOL_TOKEN")
+					if err != nil {
+						os.Exit(1)
+					}
+					os.Setenv("OMGLOL_TOKEN", apiKey)
+					address, err := env.GetEnvValue(args[1], "OMGLOL_TOKEN")
+					if err != nil {
+						os.Exit(1)
+					}
+					os.Setenv("OMGLOL_ADDRESS", address)
+					os.Exit(0)
+				}
 			}
 		}
 	}}
