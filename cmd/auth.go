@@ -32,11 +32,9 @@ COMMANDS:
 			os.Exit(0)
 		case "token":
 			fmt.Println(os.Getenv("OMGLOL_TOKEN"))
-			
 			os.Exit(0)
 		case "address":
 			fmt.Println(os.Getenv("OMGLOL_ADDRESS"))
-			
 			os.Exit(0)
 		case "set":
 		
