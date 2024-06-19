@@ -11,7 +11,7 @@ var AuthCmd = &cobra.Command{
 	Use:   "auth <command>",
 	Short: "Setup or view auth",
 	Long: `Setup or view auth
-	
+
 COMMANDS:
 	status:   view auth status
 	set:      set address or api token
@@ -36,22 +36,7 @@ COMMANDS:
 		case "address":
 			fmt.Println(os.Getenv("OMGLOL_ADDRESS"))
 			os.Exit(0)
-		case "set":
-
-			if len(args) < 3 {
-				fmt.Println("auth set <address|token> <value>")
-				os.Exit(0)
-			}
-			switch args[1] {
-			case "token":
-				os.Setenv("OMGLOL_TOKEN", args[2])
-				os.Exit(0)
-			case "address":
-				os.Setenv("OMGLOL_ADDRESS", args[2])
-				os.Exit(0)
-			default:
-				fmt.Println("auth set <address|token> <value>")
-				os.Exit(1)
-			}
+		default:
+			fmt.Printf("Unknown command '%s'\n", args[0])
 		}
 	}}
