@@ -1,10 +1,10 @@
 module statuslog/cmd
 
-go 1.21
+go 1.22.4
 
 require (
 	github.com/charmbracelet/glamour v0.6.0
-	github.com/spf13/cobra v1.8.0
+	github.com/spf13/cobra v1.8.1
 )
 
 require (
