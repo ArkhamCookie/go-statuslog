@@ -14,7 +14,6 @@ var AuthCmd = &cobra.Command{
 
 COMMANDS:
 	status:   view auth status
-	set:      set address or api token
 	token:    print current api token
 	address:  print current address`,
 	Args: cobra.MinimumNArgs(1),
