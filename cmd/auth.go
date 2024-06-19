@@ -17,7 +17,7 @@ COMMANDS:
 	set:      set address or api token
 	token:    print current api token
 	address:  print current address`,
-	Args:  cobra.MinimumNArgs(1),
+	Args: cobra.MinimumNArgs(1),
 
 	Run: func(cmd *cobra.Command, args []string) {
 		switch args[0] {
@@ -37,7 +37,7 @@ COMMANDS:
 			fmt.Println(os.Getenv("OMGLOL_ADDRESS"))
 			os.Exit(0)
 		case "set":
-		
+
 			if len(args) < 3 {
 				fmt.Println("auth set <address|token> <value>")
 				os.Exit(0)
