@@ -1,6 +1,6 @@
 module github.com/ArkhamCookie/go-statuslog
 
-go 1.21
+go 1.22.4
 
 replace statuslog/cmd => ./cmd
 
