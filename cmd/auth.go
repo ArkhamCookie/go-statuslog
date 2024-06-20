@@ -3,7 +3,7 @@ package cmd
 import (
 	"fmt"
 	"os"
-
+	"internal/statuslog"
 	"github.com/spf13/cobra"
 )
 
@@ -26,8 +26,17 @@ COMMANDS:
 				fmt.Println("Token not set")
 				os.Exit(1)
 			}
-			// TODO: confirm by using the omglol api
-			fmt.Println("Token is set!")
+			address, err := statuslog.AuthStatus("")
+			if err != nil {
+				fmt.Println(err)
+				os.Exit(1)
+			}
+			if address == "" {
+				fmt.Println("Auth failed")
+				os.Exit(2)
+			}
+
+			fmt.Printf("Logged in to the '%s' address!\n", address)
 			os.Exit(0)
 		case "token":
 			fmt.Println(os.Getenv("OMGLOL_TOKEN"))
@@ -35,6 +44,8 @@ COMMANDS:
 		case "address":
 			fmt.Println(os.Getenv("OMGLOL_ADDRESS"))
 			os.Exit(0)
+		case "email":
+			fmt.Println(os.Getenv("OMGLOL_EMAIL"))
 		default:
 			fmt.Printf("Unknown command '%s'\n", args[0])
 		}
