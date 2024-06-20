@@ -83,3 +83,14 @@ type NewStatusData struct {
 		ExternalURL string `json:"external_url"`
 	} `json:"response"`
 }
+
+type AccountNameData struct {
+	Request struct {
+		StatusCode int  `json:"status_code"`
+		Success    bool `json:"success"`
+	} `json:"request"`
+	Response struct {
+		Message string `json:"message"`
+		Name    string `json:"name"`
+	} `json:"response"`
+}
