@@ -9,8 +9,8 @@ import (
 )
 
 var LatestCmd = &cobra.Command{
-	Use: "",
-	Short: "",
+	Use: "latest <address>",
+	Short: "View an address' latest status",
 	Args: cobra.ExactArgs(1),
 
 	Run: func(cmd *cobra.Command, args []string) {
