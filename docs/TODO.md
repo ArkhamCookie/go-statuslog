@@ -8,6 +8,7 @@
 
 - [ ] bio
 - [x] view
+- [x] latest
 - [x] list
 - [x] new
 - [ ] edit
