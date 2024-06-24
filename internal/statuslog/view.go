@@ -8,6 +8,7 @@ import (
 	"net/http"
 )
 
+// Get a status from a given address and status
 func StatusGet(address, status string) (*StatuslogRetrieveData, error) {
 	if address == "" {
 		return nil, errors.New("no address given")
