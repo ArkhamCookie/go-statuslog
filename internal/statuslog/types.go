@@ -1,5 +1,19 @@
 package statuslog
 
+type StatuslogBioData struct {
+	Request struct {
+		StatusCode int  `json:"status_code"`
+		Success    bool `json:"success"`
+	} `json:"request"`
+	Response struct {
+		Message string `json:"message"`
+		Bio     string `json:"bio"`
+		CSS     string `json:"css"`
+		Head    string `json:"head"`
+	} `json:"response"`
+}
+
+
 type StatuslogListData struct {
 	Request struct {
 		StatusCode int  `json:"status_code"`
@@ -35,19 +49,6 @@ type StatuslogRetrieveData struct {
 			Content      string `json:"content"`
 			ExternalURL  string `json:"external_url"`
 		} `json:"status"`
-	} `json:"response"`
-}
-
-type StatuslogBioData struct {
-	Request struct {
-		StatusCode int  `json:"status_code"`
-		Success    bool `json:"success"`
-	} `json:"request"`
-	Response struct {
-		Message string `json:"message"`
-		Bio     string `json:"bio"`
-		CSS     string `json:"css"`
-		Head    string `json:"head"`
 	} `json:"response"`
 }
 
