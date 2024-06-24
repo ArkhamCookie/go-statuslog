@@ -39,7 +39,6 @@
 ## Go Tests
 
 - [ ] `bio_test.go`
-- [ ] `latest_test.go`
 - [ ] `list_test.go`
 - [ ] `new_test.go`
 - [ ] `view_test.go`
