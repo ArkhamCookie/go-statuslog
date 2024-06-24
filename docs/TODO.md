@@ -8,6 +8,7 @@
 
 - [ ] bio
 - [x] view
+- [x] latest
 - [x] list
 - [x] new
 - [ ] edit
@@ -38,6 +39,7 @@
 ## Go Tests
 
 - [ ] `bio_test.go`
+- [ ] `latest_test.go`
 - [ ] `list_test.go`
 - [ ] `new_test.go`
 - [ ] `view_test.go`
