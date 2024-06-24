@@ -10,6 +10,8 @@ import (
 	"net/http"
 )
 
+// Create a new status from given string.
+// Returns true if status was posted.
 func NewStatus(status string) (bool, error) {
 	if status == "" {
 		return false, errors.New("no status provided")
