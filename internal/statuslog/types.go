@@ -51,25 +51,6 @@ type StatuslogBioData struct {
 	} `json:"response"`
 }
 
-type StatuslogLatestData struct {
-	Request struct {
-		StatusCode int  `json:"status_code"`
-		Success    bool `json:"success"`
-	} `json:"request"`
-	Response struct {
-		Message  string `json:"message"`
-		Statuses []struct {
-			ID           string `json:"id"`
-			Address      string `json:"address"`
-			Created      string `json:"created"`
-			RelativeTime string `json:"relative_time"`
-			Emoji        string `json:"emoji"`
-			Content      string `json:"content"`
-			ExternalURL  any    `json:"external_url"`
-		} `json:"statuses"`
-	} `json:"response"`
-}
-
 type NewStatusData struct {
 	Request struct {
 		StatusCode int  `json:"status_code"`
