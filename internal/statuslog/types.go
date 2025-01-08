@@ -1,5 +1,6 @@
 package statuslog
 
+// A type for storing the JSON data returned from running `statuslog.BioGet`
 type StatuslogBioData struct {
 	Request struct {
 		StatusCode int  `json:"status_code"`
@@ -13,7 +14,7 @@ type StatuslogBioData struct {
 	} `json:"response"`
 }
 
-
+// A type for storing the JSON data returned from running `statuslog.ListGet`
 type StatuslogListData struct {
 	Request struct {
 		StatusCode int  `json:"status_code"`
@@ -33,6 +34,7 @@ type StatuslogListData struct {
 	} `json:"response"`
 }
 
+// A type for storing the JSON data returned from running `statuslog.ListGet`
 type StatuslogRetrieveData struct {
 	Request struct {
 		StatusCode int  `json:"status_code"`
@@ -52,6 +54,8 @@ type StatuslogRetrieveData struct {
 	} `json:"response"`
 }
 
+// A type for storing the JSON data returned
+// when sending the POST request during the `statuslog.NewStatus` function
 type NewStatusData struct {
 	Request struct {
 		StatusCode int  `json:"status_code"`
