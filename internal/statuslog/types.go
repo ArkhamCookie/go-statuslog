@@ -51,6 +51,17 @@ type StatuslogBioData struct {
 	} `json:"response"`
 }
 
+type NewBioData struct {
+	Request struct {
+		StatusCode int  `json:"status_code"`
+		Success    bool `json:"success"`
+	} `json:"request"`
+	Response struct {
+		Message string `json:"message"`
+		URL     string `json:"url"`
+	} `json:"response"`
+}
+
 type NewStatusData struct {
 	Request struct {
 		StatusCode int  `json:"status_code"`
